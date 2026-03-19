@@ -1,9 +1,8 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=VT323&display=swap');
 
 @theme {
-  --font-serif: "EB Garamond", serif;
-  --font-mono: "VT323", monospace;
+  --font-serif: "Georgia", "Times New Roman", "Noto Serif SC", serif;
+  --font-mono: "Consolas", "Courier New", "SFMono-Regular", monospace;
 }
 
 :root {

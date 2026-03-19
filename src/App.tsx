@@ -35,6 +35,18 @@ import {
   Image,
   X
 } from 'lucide-react';
+import tiktokMarketRankingDecImg from './assets/tiktok-market-ranking-dec.jpg';
+import tiktokMarketRankingOctImg from './assets/tiktok-market-ranking-oct.png';
+import tiktokSalesAnalysisImg from './assets/tiktok-sales-analysis.png';
+import tiktokSalesTrendImg from './assets/tiktok-sales-trend.png';
+import dualInputInterfaceImg from './assets/Dual-Input Interface (Doc + Voice).png';
+import mockInterviewAgentHomeImg from './assets/mock-interview-agent-home.png';
+import resumeAiPmImg from './assets/resume-ai-pm.png';
+import resumeEcommerceOpsImg from './assets/resume-ecommerce-ops.png';
+import xhsContentListImg from './assets/xhs-content-list.jpg';
+import xhsFanDataImg from './assets/xhs-fan-data.jpg';
+import xhsProfileImg from './assets/xhs-profile.jpg';
+import xhsTopNotesImg from './assets/xhs-top-notes.jpg';
 
 const tiktokGrowthData = [
   { name: 'Week 1', sales: 400, profit: 120 },
@@ -57,6 +69,8 @@ const efficiencyData = [
   { name: 'Traditional', value: 1, color: '#A09C8F' },
   { name: 'AI-Powered', value: 4, color: '#0f0f0f' },
 ];
+
+const jdDemoVideoUrl = 'https://b23.tv/FTxZ9oZ';
 
 const TypewriterText = ({ text, delay = 50, onComplete }: { text: string; delay?: number; onComplete?: () => void }) => {
   const [displayedText, setDisplayedText] = useState('');
@@ -331,13 +345,13 @@ AI-NATIVE APPLICATIONS."
                       
                       <div className="aspect-video bg-black/5 rounded-xl overflow-hidden border border-black/5 relative group">
                         <img 
-                          src="tiktok-sales-analysis.png" 
+                          src={dualInputInterfaceImg} 
                           alt="AI Workflow Diagram" 
-                          className="w-full h-full object-contain bg-white/50 group-hover:opacity-100 transition-opacity"
+                          className="w-full h-full object-contain bg-white/50 p-3 group-hover:opacity-100 transition-opacity"
                           referrerPolicy="no-referrer"
                         />
                         <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/20">
-                          <span className="text-white text-xs font-mono bg-black/50 px-3 py-1 rounded-full">System Architecture</span>
+                          <span className="text-white text-xs font-mono bg-black/50 px-3 py-1 rounded-full">Dual-Input Resume Flow</span>
                         </div>
                       </div>
                     </div>
@@ -443,15 +457,6 @@ AI-NATIVE APPLICATIONS."
                         </ul>
                       </div>
                     </div>
-                    <div className="h-24 bg-white rounded-xl flex items-center justify-center relative overflow-hidden group cursor-zoom-in border border-black/5" onClick={() => setSelectedImage("tiktok-sales-trend.png")}>
-                      <img 
-                        src="tiktok-sales-trend.png" 
-                        alt="TikTok Sales Trend" 
-                        className="w-full h-full object-contain opacity-80 group-hover:opacity-100 transition-opacity"
-                        referrerPolicy="no-referrer"
-                      />
-                      <span className="absolute bottom-1 right-1 text-[7px] bg-black/50 text-white px-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">点击放大</span>
-                    </div>
                   </div>
                 </div>
 
@@ -532,6 +537,7 @@ AI-NATIVE APPLICATIONS."
                       <h4 className="font-mono text-xs uppercase tracking-wider opacity-50">📌 产品迭代记录 (v1.0 → v2.0)</h4>
                       <div className="space-y-4">
                         <div className="p-4 bg-red-50/30 rounded-xl border border-red-100/50">
+                        <div className="p-4 bg-blue-50/30 rounded-xl border border-blue-100/50">
                           <div className="flex items-center gap-2 mb-2">
                             <span className="text-[10px] font-bold text-red-700">【Bug修复】</span>
                           </div>
@@ -540,13 +546,12 @@ AI-NATIVE APPLICATIONS."
                             <strong>解决：</strong>传入当前时间数据作为系统提示词锚点。
                           </p>
                         </div>
-                        <div className="p-4 bg-blue-50/30 rounded-xl border border-blue-100/50">
                           <div className="flex items-center gap-2 mb-2">
-                            <span className="text-[10px] font-bold text-blue-700">【体验优化】</span>
+                            <span className="text-[10px] font-bold text-blue-700">体验优化</span>
                           </div>
                           <p className="text-[10px] leading-relaxed">
-                            <strong>分析：</strong>AI追问过长导致疲劳。<br/>
-                            <strong>优化：</strong>先传简历作为基础，语音面试仅针对缺失/薄弱项追问。
+                            <strong>问题：</strong>AI 追问过长，容易让用户产生疲劳感。<br/>
+                            <strong>优化：</strong>先上传简历作为基础上下文，语音面试只针对缺失项和薄弱项追问。
                           </p>
                         </div>
                         <div className="p-4 bg-emerald-50/30 rounded-xl border border-emerald-100/50">
@@ -556,10 +561,73 @@ AI-NATIVE APPLICATIONS."
                           <p className="text-[10px] leading-relaxed mb-3">
                             自己使用AI修改后的简历投递，成功拿到面试机会。
                           </p>
-                          <div className="aspect-video bg-black/5 rounded-lg border border-black/5 flex items-center justify-center relative group overflow-hidden">
-                            <Play size={20} className="text-black/20 group-hover:scale-110 transition-transform" />
-                            <span className="absolute bottom-2 right-2 text-[8px] font-mono opacity-30">DEMO_RECORDING.MP4</span>
+                          <div className="aspect-video bg-black rounded-lg border border-black/5 flex items-center justify-center relative group overflow-hidden cursor-pointer" onClick={() => window.open(jdDemoVideoUrl, '_blank', 'noopener,noreferrer')}>
+                            <div className="absolute inset-0 bg-gradient-to-br from-neutral-900 via-neutral-800 to-black" />
+                            <div className="relative z-10 flex flex-col items-center justify-center text-white text-center px-6">
+                              <div className="w-14 h-14 rounded-full bg-white text-black flex items-center justify-center mb-4 shadow-lg">
+                                <Play size={24} />
+                              </div>
+                              <h5 className="mt-2 text-base font-medium">JD 简历工具演示视频</h5>
+                              <p className="mt-2 text-[10px] opacity-70">点击后在新标签页打开 Bilibili 演示视频</p>
+                            </div>
+                            <span className="absolute bottom-2 right-2 text-[8px] font-mono text-white/30">OPEN_VIDEO</span>
                           </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="mt-8 border-t border-black/5 pt-8">
+                    <div className="flex items-start justify-between gap-4 mb-6">
+                      <div>
+                        <h4 className="text-xl font-medium">跨领域生成能力验证</h4>
+                        <p className="text-xs opacity-60 mt-2">
+                          用同一套工具分别生成 AI 产品经理方向和跨境电商运营方向简历，验证其跨领域改写与表达能力。
+                        </p>
+                      </div>
+                      <span className="case-study-badge">OUTPUT CHECK</span>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div className="bg-white rounded-2xl border border-black/5 p-4">
+                        <div className="flex items-center justify-between mb-3">
+                          <h5 className="text-sm font-medium">AI 产品经理方向</h5>
+                          <button
+                            type="button"
+                            onClick={() => setSelectedImage(resumeAiPmImg)}
+                            className="text-[10px] font-mono opacity-50 hover:opacity-100 transition-opacity"
+                          >
+                            OPEN
+                          </button>
+                        </div>
+                        <div className="aspect-[3/4] overflow-hidden rounded-xl border border-black/5 bg-[#F4F1E6] cursor-zoom-in" onClick={() => setSelectedImage(resumeAiPmImg)}>
+                          <img
+                            src={resumeAiPmImg}
+                            alt="AI PM Resume Output"
+                            className="w-full h-full object-contain"
+                            referrerPolicy="no-referrer"
+                          />
+                        </div>
+                      </div>
+
+                      <div className="bg-white rounded-2xl border border-black/5 p-4">
+                        <div className="flex items-center justify-between mb-3">
+                          <h5 className="text-sm font-medium">跨境电商运营方向</h5>
+                          <button
+                            type="button"
+                            onClick={() => setSelectedImage(resumeEcommerceOpsImg)}
+                            className="text-[10px] font-mono opacity-50 hover:opacity-100 transition-opacity"
+                          >
+                            OPEN
+                          </button>
+                        </div>
+                        <div className="aspect-[3/4] overflow-hidden rounded-xl border border-black/5 bg-[#F4F1E6] cursor-zoom-in" onClick={() => setSelectedImage(resumeEcommerceOpsImg)}>
+                          <img
+                            src={resumeEcommerceOpsImg}
+                            alt="Ecommerce Ops Resume Output"
+                            className="w-full h-full object-contain"
+                            referrerPolicy="no-referrer"
+                          />
                         </div>
                       </div>
                     </div>
@@ -621,9 +689,9 @@ AI-NATIVE APPLICATIONS."
                         </div>
                       </div>
                       <div className="mt-4 grid grid-cols-2 gap-2">
-                        <div className="aspect-square bg-white rounded-lg border border-black/5 flex items-center justify-center relative overflow-hidden group cursor-zoom-in" onClick={() => setSelectedImage("tiktok-sales-analysis.png")}>
+                        <div className="aspect-square bg-white rounded-lg border border-black/5 flex items-center justify-center relative overflow-hidden group cursor-zoom-in" onClick={() => setSelectedImage(tiktokSalesAnalysisImg)}>
                           <img 
-                            src="tiktok-sales-analysis.png" 
+                            src={tiktokSalesAnalysisImg} 
                             alt="TikTok Sales Analysis" 
                             className="w-full h-full object-contain group-hover:opacity-100 transition-opacity"
                             referrerPolicy="no-referrer"
@@ -633,9 +701,9 @@ AI-NATIVE APPLICATIONS."
                           />
                           <span className="absolute bottom-1 left-1 text-[7px] bg-black/50 text-white px-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">SALES_ANALYSIS.PNG</span>
                         </div>
-                        <div className="aspect-square bg-white rounded-lg border border-black/5 flex items-center justify-center relative overflow-hidden group cursor-zoom-in" onClick={() => setSelectedImage("tiktok-market-ranking-oct.png")}>
+                        <div className="aspect-square bg-white rounded-lg border border-black/5 flex items-center justify-center relative overflow-hidden group cursor-zoom-in" onClick={() => setSelectedImage(tiktokMarketRankingOctImg)}>
                           <img 
-                            src="tiktok-market-ranking-oct.png" 
+                            src={tiktokMarketRankingOctImg} 
                             alt="TikTok Market Ranking" 
                             className="w-full h-full object-contain group-hover:opacity-100 transition-opacity"
                             referrerPolicy="no-referrer"
@@ -698,9 +766,9 @@ AI-NATIVE APPLICATIONS."
 
                     <div className="space-y-4">
                       <h4 className="font-mono text-xs uppercase tracking-wider opacity-50">📌 发现真因与行动</h4>
-                      <div className="aspect-video bg-white rounded-xl overflow-hidden border border-black/5 relative group mb-4 cursor-zoom-in" onClick={() => setSelectedImage("tiktok-sales-trend.png")}>
+                      <div className="aspect-video bg-white rounded-xl overflow-hidden border border-black/5 relative group mb-4 cursor-zoom-in" onClick={() => setSelectedImage(tiktokSalesTrendImg)}>
                         <img 
-                          src="tiktok-sales-trend.png" 
+                          src={tiktokSalesTrendImg} 
                           alt="TikTok Sales Trend" 
                           className="w-full h-full object-contain group-hover:opacity-100 transition-opacity"
                           referrerPolicy="no-referrer"
@@ -807,9 +875,9 @@ AI-NATIVE APPLICATIONS."
                       </div>
                     </div>
                     <div className="grid grid-cols-2 gap-4">
-                      <div className="aspect-[3/4] bg-white rounded-xl flex items-center justify-center relative overflow-hidden group cursor-zoom-in" onClick={() => setSelectedImage("xhs-top-notes.jpg")}>
+                      <div className="aspect-[3/4] bg-white rounded-xl flex items-center justify-center relative overflow-hidden group cursor-zoom-in" onClick={() => setSelectedImage(xhsTopNotesImg)}>
                         <img 
-                          src="xhs-top-notes.jpg" 
+                          src={xhsTopNotesImg} 
                           alt="Xiaohongshu Top Notes" 
                           className="w-full h-full object-contain group-hover:opacity-100 transition-opacity"
                           referrerPolicy="no-referrer"
@@ -819,9 +887,9 @@ AI-NATIVE APPLICATIONS."
                         />
                         <span className="absolute bottom-2 text-[8px] font-mono bg-black/50 text-white px-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">点击放大</span>
                       </div>
-                      <div className="aspect-[3/4] bg-white rounded-xl flex items-center justify-center relative overflow-hidden group cursor-zoom-in" onClick={() => setSelectedImage("xhs-fan-data.jpg")}>
+                      <div className="aspect-[3/4] bg-white rounded-xl flex items-center justify-center relative overflow-hidden group cursor-zoom-in" onClick={() => setSelectedImage(xhsFanDataImg)}>
                         <img 
-                          src="xhs-fan-data.jpg" 
+                          src={xhsFanDataImg} 
                           alt="Xiaohongshu Fan Data" 
                           className="w-full h-full object-contain group-hover:opacity-100 transition-opacity"
                           referrerPolicy="no-referrer"
@@ -1054,38 +1122,38 @@ AI-NATIVE APPLICATIONS."
                 {[
                   { 
                     title: "JD 简历工具演示", 
-                    description: "AI 采访与简历重构全流程演示",
-                    url: "https://assets.mixkit.co/videos/preview/mixkit-software-developer-working-on-code-screen-close-up-34395-large.mp4", 
-                    type: "video" 
+                    description: "AI 采访与简历重构全流程演示，点击跳转到 Bilibili 查看视频。",
+                    url: jdDemoVideoUrl, 
+                    type: "video-link" 
                   },
                   { 
                     title: "TikTok 爆款选品榜单", 
-                    description: "瓜皮帽单品月销万件，稳居类目 TOP 3",
-                    url: "tiktok-market-ranking-dec.jpg", 
+                    description: "瓜皮帽单品月销万件，稳居类目 TOP 3。",
+                    url: tiktokMarketRankingDecImg, 
                     type: "image" 
                   },
                   { 
                     title: "小红书个人主页", 
-                    description: "25英一京区70+，分享英语干货与成长",
-                    url: "xhs-profile.jpg", 
+                    description: "账号主页展示与内容定位。",
+                    url: xhsProfileImg, 
                     type: "image" 
                   },
                   { 
                     title: "小红书内容分析", 
-                    description: "高频痛点挖掘与针对性内容迭代",
-                    url: "xhs-content-list.jpg", 
+                    description: "高频痛点挖掘与针对性内容迭代。",
+                    url: xhsContentListImg, 
                     type: "image" 
                   },
                   { 
                     title: "TikTok 运营数据看板", 
-                    description: "实时追踪销售趋势与转化漏斗",
-                    url: "tiktok-sales-trend.png", 
+                    description: "实时追踪销售趋势与转化漏斗。",
+                    url: tiktokSalesAnalysisImg, 
                     type: "image" 
                   },
                   { 
-                    title: "AI 工作流自动化", 
-                    description: "基于 N8N 的内容生产自动化流水线",
-                    url: "tiktok-sales-analysis.png", 
+                    title: "沉浸式 AI 面试与逐字稿重构 Agent", 
+                    description: "展示 Mock Interview Agent 的首页与核心交互入口。",
+                    url: mockInterviewAgentHomeImg, 
                     type: "image" 
                   }
                 ].map((item, i) => (
@@ -1094,17 +1162,23 @@ AI-NATIVE APPLICATIONS."
                     whileHover={{ y: -10 }}
                     className="group bg-white rounded-3xl overflow-hidden border border-black/5 shadow-sm hover:shadow-xl transition-all h-fit"
                   >
-                    <div className="relative overflow-hidden bg-white cursor-zoom-in" onClick={() => item.type === 'image' && setSelectedImage(item.url)}>
-                      {item.type === 'video' ? (
-                        <div className="aspect-[4/5]">
-                          <video 
-                            src={item.url} 
-                            autoPlay 
-                            muted 
-                            loop 
-                            playsInline
-                            className="w-full h-full object-cover group-hover:opacity-100 transition-opacity"
-                          />
+                    <div
+                      className={`relative overflow-hidden bg-white ${item.type === 'image' ? 'cursor-zoom-in' : 'cursor-pointer'}`}
+                      onClick={() => {
+                        if (item.type === 'image') setSelectedImage(item.url);
+                        if (item.type === 'video-link') window.open(item.url, '_blank', 'noopener,noreferrer');
+                      }}
+                    >
+                      {item.type === 'video-link' ? (
+                        <div className="aspect-[4/5] bg-black text-white flex flex-col items-center justify-center gap-4 p-8 text-center">
+                          <div className="w-16 h-16 rounded-full bg-white text-black flex items-center justify-center">
+                            <Play size={28} />
+                          </div>
+                          <div>
+                            <p className="text-xs font-mono opacity-60 uppercase tracking-[0.3em] mb-2">Bilibili Demo</p>
+                            <h4 className="text-2xl font-medium">JD 简历工具视频</h4>
+                            <p className="text-sm opacity-70 mt-3">点击后在新标签页打开哔哩哔哩视频</p>
+                          </div>
                         </div>
                       ) : (
                         <img 
@@ -1118,11 +1192,11 @@ AI-NATIVE APPLICATIONS."
                         />
                       )}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6 text-white">
-                        <p className="text-xs font-mono mb-1 opacity-70 uppercase tracking-widest">{item.type}</p>
+                        <p className="text-xs font-mono mb-1 opacity-70 uppercase tracking-widest">{item.type === 'video-link' ? 'video' : item.type}</p>
                         <h4 className="text-lg font-medium">{item.title}</h4>
                         <p className="text-xs opacity-80 mt-2 line-clamp-2">{item.description}</p>
                         <div className="mt-4 flex items-center gap-2 text-[10px] font-mono text-emerald-400">
-                          <Search size={12} /> 点击查看大图
+                          {item.type === 'video-link' ? <ExternalLink size={12} /> : <Search size={12} />} {item.type === 'video-link' ? '打开 Bilibili' : '点击查看大图'}
                         </div>
                       </div>
                     </div>
@@ -1137,12 +1211,12 @@ AI-NATIVE APPLICATIONS."
               </div>
               
               <div className="mt-16 p-8 bg-black text-white rounded-3xl text-center">
-                <h3 className="text-2xl font-medium mb-4">想要查看更多实战案例？</h3>
+                <h3 className="text-2xl font-medium mb-4">想看更多完整案例？</h3>
                 <p className="text-sm opacity-60 mb-8 max-w-xl mx-auto">
-                  我还有更多关于 AI 产品原型、TikTok 运营复盘以及跨境电商选品的研究报告，欢迎通过邮件或微信与我进一步交流。
+                  我还有更多关于 AI 产品原型、TikTok 运营复盘以及跨境电商选品的研究资料，欢迎通过邮件进一步交流。
                 </p>
                 <button className="px-8 py-4 bg-white text-black rounded-full font-medium hover:scale-105 transition-transform flex items-center gap-2 mx-auto">
-                  <Mail size={18} /> 联系我获取完整版 PDF
+                  <Mail size={18} /> 联系我获取完整资料
                 </button>
               </div>
             </div>
